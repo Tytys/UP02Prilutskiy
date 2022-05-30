@@ -38,7 +38,7 @@
                 <MenuItem x:Name="ExitIm" Header="Выход"/>
             </MenuItem>
             <MenuItem x:Name="AddIm" 
-                      Header="Добавить пользователя"/>
+                      Header="Добавить пользователя" Click="AddIm_Click"/>
         </Menu>
         <Label Content="Поиск" Grid.Row="5"
                Grid.Column="1"
@@ -51,7 +51,8 @@
                   IsReadOnly="True"
                   Grid.Row="6" Grid.Column="1"
                   Grid.ColumnSpan="2"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  MouseDoubleClick="ListUserDG_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№ п/п"
                                     Binding="{Binding UserID}"

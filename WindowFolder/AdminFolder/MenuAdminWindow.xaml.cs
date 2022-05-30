@@ -38,5 +38,32 @@ namespace UP02Prilutskiy.WindowFolder.AdminFolder
                 $"Where LastName Like '%{SearchTb.Text}%' " +
                 $"OR Email Like '%{SearchTb.Text}%'");
         }
+
+        private void AddIm_Click(object sender, RoutedEventArgs e)
+        {
+            new AddUserWindow().ShowDialog();
+            dGClass.LoadDG("Select * From dbo.[User]");
+        }
+
+        private void ListUserDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (ListUserDG.SelectedItem == null)
+            {
+                MBClass.ErrorMB("Вы не выбрали строку");
+            }
+            else
+            {
+                try
+                {
+                    VariableClass.UserId = dGClass.SelectId();
+                    new EditUserWindow().ShowDialog();
+                    dGClass.LoadDG("Select * From dbo.[User]");
+                }
+                catch (Exception ex)
+                {
+                    MBClass.ErrorMB(ex);
+                }
+            }
+        }
     }
 }
