@@ -9,5 +9,6 @@ namespace UP02Prilutskiy.ClassFolder
     class VariableClass
     {
         public static string UserId { get; set;}
+        public static string CustomerId { get; set;}
     }
 }

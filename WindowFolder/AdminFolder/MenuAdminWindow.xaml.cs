@@ -43,6 +43,7 @@ namespace UP02Prilutskiy.WindowFolder.AdminFolder
         {
             new AddUserWindow().ShowDialog();
             dGClass.LoadDG("Select * From dbo.[User]");
+            Close();
         }
 
         private void ListUserDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)

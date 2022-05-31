@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using UP02Prilutskiy.ClassFolder;
+using UP02Prilutskiy.WindowFolder.UserFolder;
 
 namespace UP02Prilutskiy.WindowFolder
 {
@@ -67,12 +68,11 @@ namespace UP02Prilutskiy.WindowFolder
                         switch (dataReader[5].ToString())
                         {
                             case "1":
-                                new AdminFolder.MenuAdminWindow().ShowDialog();
+                                new AdminFolder.MenuAdminWindow().Show();
+                                this.Close();
                                 break;
                             case "2":
-                                MBClass.InfoMB("Пользователь\nЗдраствуйте " 
-                                    + dataReader[3].ToString() + " " 
-                                    + dataReader[4].ToString());
+                                new MenuUserWindow().ShowDialog();
                                 break;
                             case "3":
                                 MBClass.InfoMB("Менеджер\nЗдраствуйте " 
@@ -95,7 +95,8 @@ namespace UP02Prilutskiy.WindowFolder
 
         private void RegistrationBtn_Click(object sender, RoutedEventArgs e)
         {
-            new RegistrationWindow().ShowDialog();
+            new RegistrationWindow().Show();
+            Close();
         }
 
         private void LogOutBth_Click(object sender, RoutedEventArgs e)

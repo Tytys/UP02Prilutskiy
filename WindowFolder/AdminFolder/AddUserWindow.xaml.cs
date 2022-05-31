@@ -46,7 +46,8 @@ namespace UP02Prilutskiy.WindowFolder.AdminFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            new MenuAdminWindow().ShowDialog();
+            new MenuAdminWindow().Show();
+            Close();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
